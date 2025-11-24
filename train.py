@@ -35,6 +35,8 @@ def shift_inputs_targets(batch_input_ids):
     return inputs, targets
 
 def main():
+
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('--tokenizer', type=str, default='gpt2')
     parser.add_argument('--output_dir', type=str, default='./tiny_gpt_runs')
