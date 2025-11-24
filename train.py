@@ -43,6 +43,7 @@ def main():
     parser.add_argument('--d_model', type=int, default=128)
     parser.add_argument('--n_layers', type=int, default=4)
     parser.add_argument('--n_heads', type=int, default=4)
+    
     parser.add_argument('--epochs', type=int, default=3)
     parser.add_argument('--lr', type=float, default=3e-4)
     args = parser.parse_args()
