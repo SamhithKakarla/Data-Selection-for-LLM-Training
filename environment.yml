@@ -1,0 +1,15 @@
+name: tinyllm
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.3.0 --index-url https://download.pytorch.org/whl/cpu
+      - transformers==4.40.2
+      - datasets
+      - tokenizers
+      - tqdm
+      - numpy
+      - accelerate
