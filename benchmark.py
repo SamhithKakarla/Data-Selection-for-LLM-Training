@@ -104,4 +104,4 @@ df = pd.DataFrame(results)
 print("\nOverall Accuracy:", df["correct"].mean())
 
 
-# three rounds: Overall Accuracy: 0.7534403669724771
+# Overall Accuracy after 3 rounds: 0.7534403669724771
