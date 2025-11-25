@@ -45,7 +45,7 @@ def main():
     parser.add_argument('--n_heads', type=int, default=4)
     parser.add_argument('--epochs', type=int, default=3)
     parser.add_argument('--lr', type=float, default=3e-4)
-    parser.add_argument('--num_classes', type=int, default=3)
+    parser.add_argument('--num_classes', type=int, default=2)
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -58,8 +58,6 @@ def main():
     if tokenizer.pad_token is None:
         tokenizer.add_special_tokens({'pad_token': tokenizer.eos_token})
 
-    # Load SST-2 dataset (binary sentiment: 0=negative, 1=positive)
-    # If you want 3 classes, you'll need a different dataset or create synthetic labels
     ds = load_dataset('stanfordnlp/sst2')
 
     train_texts = [ex['sentence'] for ex in ds['train']]
@@ -68,9 +66,6 @@ def main():
     val_texts = [ex['sentence'] for ex in ds['validation']]
     val_labels = [ex['label'] for ex in ds['validation']]
 
-    # Note: SST-2 has only 2 classes (0, 1). For 3 classes, consider:
-    # - Using SST-5 dataset (5 sentiment classes)
-    # - Or map your data to 3 classes: negative (0), neutral (1), positive (2)
 
     print(f"Training samples: {len(train_texts)}")
     print(f"Validation samples: {len(val_texts)}")
