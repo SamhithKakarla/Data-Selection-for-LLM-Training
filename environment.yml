@@ -13,3 +13,4 @@ dependencies:
       - tqdm
       - numpy
       - accelerate
+      - scikit-learn
